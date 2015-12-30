@@ -1,7 +1,7 @@
 {
   "name": "hybridgroup-spheron",
   "version": "0.4.0",
-  "description": "Fork of fork of @alchemycs module to control the Sphero by Orbotix",
+  "description": "Fork of @alchemycs module to control the Sphero by Orbotix",
   "main": "lib/index.js",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/spheron/issues",
