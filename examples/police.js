@@ -13,22 +13,24 @@
  S> repeat = false;
 
  */
+var sphero = require('../lib/sphero')
+
 var o = { resetTimeout:true, requestAcknowledgement:true };
-var s = sphero().resetTimeout(true).requestAcknowledgement(true);
+var s = sphero("ef66143e996d").resetTimeout(true).requestAcknowledgement(true);
 
 s.on('error', function(error) {
   console.log('Sphero error:', error);
 });
 
 s.on('open', function() {
-
   console.log('Sphero connected');
-
 });
 
-s.open(dev);
+s.open(function(){
+  police(100,500)
+});
 
-var repeat = false;
+var repeat = true;
 
 var police = function(delay1, delay2) {
   s.setRGB(0x000000, false);
