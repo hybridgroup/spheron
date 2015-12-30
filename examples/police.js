@@ -6,31 +6,29 @@
  This file is expected to be run something like this:
 
  $ node examples/repl.js
- S> .load examples/vege.js
+ S> .load examples/police.js
  S> police(100, 500);
  S> repeat = true;
  S> police(100,500);
  S> repeat = false;
 
  */
-var sphero = require('../lib/sphero')
-
 var o = { resetTimeout:true, requestAcknowledgement:true };
-var s = sphero("ef66143e996d").resetTimeout(true).requestAcknowledgement(true);
+var s = sphero().resetTimeout(true).requestAcknowledgement(true);
 
 s.on('error', function(error) {
   console.log('Sphero error:', error);
 });
 
 s.on('open', function() {
+
   console.log('Sphero connected');
+
 });
 
-s.open(function(){
-  police(100,500)
-});
+s.open(dev);
 
-var repeat = true;
+var repeat = false;
 
 var police = function(delay1, delay2) {
   s.setRGB(0x000000, false);
