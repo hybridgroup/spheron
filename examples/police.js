@@ -6,7 +6,7 @@
  This file is expected to be run something like this:
 
  $ node examples/repl.js
- S> .load examples/vege.js
+ S> .load examples/police.js
  S> police(100, 500);
  S> repeat = true;
  S> police(100,500);
